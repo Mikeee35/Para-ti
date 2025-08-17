@@ -1,0 +1,118 @@
+:root{
+  --bg1:#0a0a1a; --bg2:#14142f; --card:#0f0f24; --muted:rgba(255,255,255,.84);
+  --text:#ffffff; --ring:rgba(255,105,180,.35);
+  --pink:#ff6aa0; --pink-2:#d94f99; --rose:#dd3b6e; --purple:#7a6cf3; --white:#ffffff;
+  --heart-crack-color: #ffffff;
+  --radius:18px; --shadow:0 22px 60px rgba(0,0,0,.45);
+}
+/* Tema claro */
+.theme-light{
+  --bg1:#f6f7fb; --bg2:#eceff6; --card:#ffffff; --muted:rgba(14,14,18,.7);
+  --text:#0e0e12; --ring:rgba(255,105,180,.25);
+  --pink:#e4549a; --pink-2:#c2438b; --rose:#c93462; --purple:#6a5ae4; --white:#0e0e12;
+  --heart-crack-color: #0e0e12;
+  --shadow:0 18px 40px rgba(20,24,38,.08);
+}
+body{background: radial-gradient(1200px 620px at 75% -10%, rgba(255,105,180,.07), transparent 60%),
+             linear-gradient(180deg, var(--bg1), var(--bg2));}
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 620px at 75% -10%, rgba(255,105,180,.07), transparent 60%),
+             linear-gradient(180deg, var(--bg1), var(--bg2));
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+
+/* Tipografía */
+.title{font-size:clamp(28px, 5vw, 44px); font-weight:800; letter-spacing:.3px; margin:0 0 8px}
+.subtitle{font: 400 clamp(16px, 2.5vw, 18px)/1.7 "Crimson Pro", ui-serif, Georgia, serif; margin:0}
+.h{font-size:clamp(22px, 4vw, 28px); font-weight:700; margin:0}
+.tiny{font-size:12px}
+.muted{color:var(--muted)}
+
+/* Layout */
+.container{width:min(1000px, 92vw); margin: 90px auto 80px; padding: 0 6px}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding: clamp(18px, 3vw, 28px);
+  backdrop-filter: blur(6px) saturate(120%);
+  animation: fadeIn .6s ease both;
+}
+
+/* Header / nav */
+.site-header{position:sticky; top:0; z-index:50; backdrop-filter: blur(6px) saturate(120%);
+  background: linear-gradient(180deg, rgba(10,10,26,.8), rgba(10,10,26,.35)); border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{width:min(1000px, 92vw); margin:0 auto; display:flex; gap:10px; align-items:center; justify-content:space-between; padding:10px 6px}
+.brand{display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--text)}
+.brand-mark{filter: drop-shadow(0 0 14px rgba(255,105,180,.45))}
+.brand-text{font-weight:700; letter-spacing:.3px}
+.nav-actions{display:flex; align-items:center; gap:10px}
+.nav-link{color:var(--muted); text-decoration:none; padding:10px 8px; border-radius:10px}
+.nav-link:hover{background:rgba(255,255,255,.06); color:var(--text)}
+
+/* HERO */
+.hero{display:grid; gap:clamp(14px, 2vw, 22px); align-items:center; margin-bottom: clamp(28px, 6vw, 56px)}
+@media (min-width: 860px){ .hero{grid-template-columns: 1.05fr .95fr} }
+.hero-right{display:flex; align-items:center; justify-content:center}
+
+/* Corazón SVG responsivo */
+.heart-svg{display:block; width: clamp(180px, 46vw, 320px); height: auto; filter: drop-shadow(0 0 24px rgba(255,105,180,.35));}
+.heart-crack{fill:none; stroke: var(--heart-crack-color); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 6 10; animation: crack 2.6s ease-in-out infinite}
+@keyframes crack{ 0%{ stroke-dashoffset: 0 } 50%{ stroke-dashoffset: 60 } 100%{ stroke-dashoffset: 0 } }
+
+/* Glitch suave del título */
+.glitch{ position: relative; display:inline-block }
+.glitch::before, .glitch::after{
+  content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%; overflow: hidden; pointer-events:none;
+}
+.glitch::before{ transform: translate(1px,0); opacity:.25; color:#ff9ac0; }
+.glitch::after { transform: translate(-1px,0); opacity:.25; color:#b39cfc; }
+
+/* Párrafos de lectura larga */
+.para{font: 400 clamp(15px, 2.2vw, 18px)/1.9 "Crimson Pro", ui-serif, Georgia, serif; margin:0}
+
+/* Carta */
+.letter{display:grid; gap:18px}
+.section-header{display:grid; gap:6px; margin-bottom:4px}
+.section-footer{display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
+
+/* Botones */
+.btn{appearance:none; border:0; cursor:pointer; border-radius:12px; font-weight:600; font-size:16px;
+  padding:12px 16px; transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease; text-decoration:none}
+.btn-primary{background: linear-gradient(90deg, var(--pink), var(--pink-2)); color:#fff; box-shadow:0 10px 24px var(--ring)}
+.btn-primary:hover{transform:translateY(-1px); box-shadow:0 14px 28px var(--ring)}
+.btn-ghost{background: rgba(255,255,255,.06); color:#fff; border:1px solid rgba(255,255,255,.12)}
+.btn-ghost:hover{background: rgba(255,255,255,.12)}
+
+/* Canvas lluvia */
+#rain{position:fixed; inset:0; z-index:-1; opacity:.85}
+
+/* Reveal */
+.reveal{opacity:0; transform: translateY(10px)}
+.reveal.is-visible{opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease}
+@keyframes fadeIn{from{opacity:0; transform: translateY(10px)} to{opacity:1; transform:none}}
+
+/* Tema: el color cambia con body.theme-light/por defecto oscuro */
+/* (eliminado el modo 'contraste') */
+.site-footer{display:flex; justify-content:center; padding:26px 12px; color:var(--muted)}
+body.contrast .card{background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.07));}
+
+/* Footer */
+.site-footer{display:flex; justify-content:center; padding:26px 12px; color:var(--muted)}
+
+/* Accesibilidad */
+.visually-hidden{position:absolute !important; clip:rect(1px,1px,1px,1px); clip-path: inset(50%); height:1px; width:1px; overflow:hidden; white-space:nowrap; border:0; padding:0}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1; transform:none}
+  .heart-crack{animation: none}
+}

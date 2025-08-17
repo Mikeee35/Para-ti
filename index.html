@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Después del Ruido — Landing de desamor</title>
+    <meta name="description" content="Una landing triste y elegante para decir lo que duele sin gritarlo." />
+    <meta name="theme-color" content="#0d0d1b" />
+
+    <!-- Fuentes (opcional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- Fondo lluvia -->
+    <canvas id="rain" aria-hidden="true"></canvas>
+
+    <!-- Header minimal -->
+    <header class="site-header" role="banner">
+      <nav class="nav" aria-label="principal">
+        <a class="brand" href="#inicio">
+          <span class="brand-mark" aria-hidden="true">❤</span>
+          <span class="brand-text">Después del Ruido</span>
+        </a>
+        <div class="nav-actions">
+          <a class="nav-link" href="#carta">Carta</a>
+          <button id="toggle-theme" class="btn btn-ghost" type="button" aria-pressed="false">🌙</button>
+
+        </div>
+      </nav>
+    </header>
+
+    <main id="inicio" class="container" role="main">
+      <!-- HERO con corazón roto -->
+      <section class="hero card reveal" aria-label="portada">
+        <div class="hero-left">
+          <h1 class="title glitch" data-text="Cuando el amor se rompe">
+            Cuando el amor se rompe
+          </h1>
+          <p class="subtitle">A veces el silencio pesa más que las palabras. Aquí dejo las mías.</p>
+          
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <!-- Corazón roto con pulso/grieta -->
+          <svg class="heart-svg" viewBox="0 0 200 200" role="img" aria-label="Corazón roto">
+            <defs>
+              <radialGradient id="hg" cx="50%" cy="40%" r="70%">
+                <stop offset="0%" stop-color="#ff6aa0" stop-opacity="0.95" />
+                <stop offset="60%" stop-color="#d94f99" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#7a6cf3" stop-opacity="0.6" />
+              </radialGradient>
+            </defs>
+            <path class="heart-fill" d="M100 180 C 40 130, 20 110, 20 75 C 20 50, 40 30, 65 30 C 82 30, 92 38, 100 50 C 108 38, 118 30, 135 30 C 160 30, 180 50, 180 75 C 180 110, 160 130, 100 180 Z" fill="url(#hg)" />
+            <path class="heart-crack" d="M100 55 L90 70 L105 85 L95 100 L110 115 L100 135" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- Sección Carta: pegas tus párrafos -->
+      <section id="carta" class="letter card reveal" aria-label="carta">
+        <header class="section-header">
+          <h2 class="h">Carta</h2>
+          <p class="muted">Escribe y suelta. Lo demás, que lo acomode el tiempo.</p>
+        </header>
+
+        <!-- ✍️ PÁRRAFOS AQUÍ -->
+        <p class="para">(Ejemplo) No voy a pedirte que te quedes; solo que recuerdes quién fui cuando nos mirábamos sin miedo.</p>
+        <p class="para">(Ejemplo) Hay noches que pesan como si el techo supiera pronunciar tu nombre.</p>
+        <!-- fin ejemplos -->
+
+        <footer class="section-footer">
+          <!-- Reemplaza la URL de abajo por tu destino externo -->
+          <a class="btn btn-primary" href="https://tu-destino.com" target="_blank" rel="noopener noreferrer">Ir a otra web</a>
+        </footer>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <p class="tiny">Hecho con calma. <span aria-hidden="true">—</span> <span class="muted">© Tu nombre</span></p>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
