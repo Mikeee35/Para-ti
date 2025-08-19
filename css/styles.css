@@ -1,6 +1,6 @@
 :root{
   --bg1:#0a0a1a; --bg2:#14142f; --card:#0f0f24; --muted:rgba(255,255,255,.84);
-  --text:#ffffff; --ring:rgba(255,105,180,.35);
+  --text:#ffffff; --ring:rgb(128, 0, 64);
   --pink:#ff6aa0; --pink-2:#d94f99; --rose:#dd3b6e; --purple:#7a6cf3; --white:#ffffff;
   --heart-crack-color: #ffffff;
   --radius:18px; --shadow:0 22px 60px rgba(0,0,0,.45);
